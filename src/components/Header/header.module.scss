@@ -7,6 +7,13 @@
     align-items: center;
     gap: 20px;
     border-bottom: 1px solid $gray-light;
+    margin-right: 20px;
+
+    @media (max-width: 768px) {
+        border-bottom: none;
+        padding: 0 15px;
+        margin-right: 0;
+    }
 
     .brand_logo {
         .brand {
@@ -42,6 +49,9 @@
         align-items: center;
         width: 100%;
 
+        // @media (max-width: 1080px) {
+        //     justify-content: flex-end;
+        // }
         @media (max-width: 768px) {
             justify-content: flex-end;
         }
@@ -84,5 +94,41 @@
                 background: url("../../assets/icons/dashboard-icons/icon-desktop.svg") no-repeat center;
             }
         }
+    }
+}
+
+.navTab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .list {
+        display: flex;
+        flex: 1;
+        padding: 33px 0;
+        color: $primary;
+        font-family: $font;
+        font-size: 14px;
+        font-weight: 500;
+        position: relative;
+        cursor: pointer;
+        text-align: center;
+        line-height: 17px;
+        justify-content: center;
+        
+        &.active{
+            color: $secondary;
+            
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                left: 0;
+                border-bottom: 3px solid #0073e6;
+                z-index: 1;
+                width: 100%;
+            }
+        }
+
     }
 }

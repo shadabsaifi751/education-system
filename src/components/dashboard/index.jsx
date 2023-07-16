@@ -9,7 +9,7 @@ const Dashboard = () => {
     return (
         <main className={styles.dashboard_wrapper}>
             <Header />
-            <Main/>
+            <Main />
         </main>
     )
 }

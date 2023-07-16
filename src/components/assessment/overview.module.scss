@@ -1,0 +1,205 @@
+@import "../../globalStyles/theme";
+@import "../../globalStyles/typo";
+
+.assessments_wrapper {
+    margin-bottom: 39px;
+    height: auto;
+    -webkit-transition: all 0.3s cubic-bezier(0.64, 0.19, 0.4, 0.81);
+    transition: all 0.3s cubic-bezier(0.64, 0.19, 0.4, 0.81);
+    overflow: hidden;
+    
+    @media (max-width:768px) {
+        height: 0;
+        opacity: 0;
+        margin: 0;
+    }
+
+    &.isActive {
+        @media (max-width:1024px) {
+            height: auto;
+            opacity: 1;
+            margin-bottom: 39px;
+        }
+        @media (max-width:480px) {
+            height: 274px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .title {
+        color: $primary;
+        font-family: $font;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 16px;
+    }
+
+    .total_score_wrap {
+        border-radius: 12px;
+        border: 1px solid $gray-light;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+        @media (max-width: 1024px) {
+            place-content: space-between;
+        }
+        @media (max-width: 580px) {
+            justify-content: flex-end;
+        }
+
+        .total_score_list {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            &:not(:last-child) {
+                border-right: 1px solid $gray-light;
+            }
+            @media (max-width: 1199px) {
+                &:not(:last-child) {
+                    border-right: 0;
+                    border-left: 1px solid $gray-light;
+                    order: 3;
+                }
+                &:nth-child(3) {
+                    border-top: 1px solid $gray-light;
+                    width: 100%;
+                }
+            }
+            @media (max-width: 1024px) {
+                &:not(:last-child) {
+                    border-right: 0;
+                    border-left: 1px solid $gray-light;
+                    order: 3;
+                }
+                &:nth-child(3) {
+                    border-top: 1px solid $gray-light;
+                    width: 100%;
+                }
+                // &:nth-child(1) {
+                //     border-left: 0;
+                // }
+            }
+            @media (max-width: 768px) {
+                &:nth-child(2) {
+                    border-top: 1px solid $gray-light;
+                    border-left: 0;
+                    width: 100%;
+                }
+                &:nth-child(3) {
+                    border-top: 1px solid $gray-light;
+                    width: 100%;
+                    border-left: 0;
+                }
+                &:nth-child(1) {
+                    width: 50%;
+                }
+                &:last-child {
+                    width: 50%;
+                }
+            }
+
+            @media (max-width: 480px) {
+                padding: 10px 14px;
+            }
+            .total_title {
+                color: $primary;
+                font-family: $font;
+                font-size: 14px;
+                font-weight: 600;
+
+                @media (max-width: 480px) {
+                    font-size: 12px;
+                }
+            }
+            .collection_list {
+                display: flex;
+                align-items: center;
+                .counter_wrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+
+                    @media (max-width: 480px) {
+                        gap: 10px;
+                    }
+
+                    &:not(:last-child) {
+                        border-right: 1px solid $gray-light;
+                        padding-right: 20px;
+                    }
+                    .icons {
+                        border-radius: 8px;
+
+                        .source,
+                        .candidates,
+                        .assessment,
+                        .purpose {
+                            width: 40px;
+                            height: 40px;
+                            display: block;
+                            cursor: pointer;
+                            background: url("../../assets/icons/dashboard-icons/icon-assessment.svg") no-repeat center;
+                        }
+                        .candidates {
+                            background: url("../../assets/icons/dashboard-icons/icon-source.svg") no-repeat center;
+                        }
+                        .source {
+                            mask-image: url("../../assets/icons/dashboard-icons/icon-candidates.svg") no-repeat center;
+                        }
+                        .purpose {
+                            mask-image: url("../../assets/icons/dashboard-icons/icon-perpose.svg") no-repeat center;
+                        }
+                    }
+                    .icon_wrap {
+                        .count_title {
+                            color: $primary;
+                            font-family: $font;
+                            font-size: 20px;
+                            font-weight: 700;
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+                            margin-bottom: 1px;
+                            .badge {
+                                color: $success;
+                                font-family: $font;
+                                font-size: 12px;
+                                font-weight: 500;
+                            }
+
+                            @media (max-width: 480px) {
+                                font-size: 16px;
+                                font-weight: 600;
+                                .badge {
+                                    font-size: 10px;
+                                }
+                            }
+                            @media (max-width: 360px) {
+                                font-size: 14px;
+                                font-weight: 500;
+                                .badge {
+                                    font-size: 8px;
+                                }
+                            }
+                        }
+                        .subtitle {
+                            color: $primary;
+                            font-family: $font;
+                            font-size: 12px;
+                            font-weight: 500;
+                            @media (max-width: 480px) {
+                                font-size: 10px;
+                            }
+                            @media (max-width: 360px) {
+                                font-size: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@import "../../globalStyles/theme";
+@import "../../globalStyles/typo";
+
+.my_assessment_wrapper {
+    .assessment_head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        
+        .icon_wrap {
+            display: flex;
+            gap: 4px;
+            z-index: 1;
+            .button_group {
+                background: transparent;
+                border: none;
+                padding: 8px;
+                cursor: pointer;
+                border-radius: 8rem;
+                &.isActive{
+                    border: 1px solid $secondary;
+                    background-color: #F2F8FE;
+                }
+                .icon_serach,
+                .icon_filter,
+                .icon_info {
+                    width: 22px;
+                    height: 22px;
+                    display: block;
+                    cursor: pointer;
+                    background: url("../../assets/icons/dashboard-icons/icon-search.svg") no-repeat center;
+                }
+                .icon_filter {
+                    background: url("../../assets/icons/dashboard-icons/icon-filter.svg") no-repeat center;
+                }
+                .icon_info {
+                    background: url("../../assets/icons/dashboard-icons/icon-info.svg") no-repeat center;
+                }
+            }
+        }
+        .title {
+            color: $primary;
+            font-family: $font;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+    }
+
+    .assessment_list{
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(3,1fr);
+        
+        @media (max-width:1024px) {
+            gap: 20px;
+            grid-template-columns: repeat(2,1fr);
+        }
+        @media (max-width:768px) {
+            gap: 15px;
+            grid-template-columns: 1fr;
+        }
+    }
+   
+}

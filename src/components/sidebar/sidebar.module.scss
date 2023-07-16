@@ -1,10 +1,27 @@
 @import "../../globalStyles/theme";
 
+// @mixin button_wrap {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     margin-bottom: 6px;
+//     .admin_button {
+//         border-radius: 22px;
+//         border: 1px solid $danger;
+//         background: $danger-light;
+//         padding: 2px 8px;
+//         color: $danger;
+//         font-family: "Inter", sans-serif;
+//         font-size: 10px;
+//         font-weight: 500;
+//     }
+// }
+
 .sidebar {
     padding: 16px 20px 20px 30px;
     display: flex;
     flex-direction: column;
-
+    justify-content: flex-start;
     .status {
         padding: 15px 10px;
         display: flex;
@@ -60,28 +77,40 @@
             font-weight: 500;
         }
     }
+
+    // @include button_wrap;
 }
 
 .mobile_sidebar_wrapper {
-    background: rgba($black, 0.1);
+    background: rgba($black, 0.4);
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     opacity: 0;
-    display: none;
-    
-    &.active{
-        display: block;
-        .mobile_sidebar{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+    -webkit-transition: all 0.3s cubic-bezier(0.64, 0.19, 0.4, 0.81);
+    transition: all 0.3s cubic-bezier(0.64, 0.19, 0.4, 0.81);
+
+    &.show {
+        z-index: 99;
+        opacity: 1;
+        .mobile_sidebar {
             transform: translate(0);
         }
     }
 
-    .mobile_sidebar{
+    .mobile_sidebar {
         padding: 40px 20px;
         position: fixed;
         height: 100vh;
         display: block;
-        z-index: 50;
+        z-index: 101;
         top: 0;
         left: 0;
         width: 315px;
@@ -89,9 +118,150 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        background-color: $white;
+        -webkit-transition: all 0.3s cubic-bezier(0.64, 0.19, 0.4, 0.81);
+        transition: all 0.3s cubic-bezier(0.64, 0.19, 0.4, 0.81);
 
-        &.active{
-            transform: translate(0);
+        @media (max-width:480px) {
+            width: calc(100vw - 50px);
+        }
+        @media (max-width:320px) {
+            width: calc(100vw - 30px);
+        }
+
+        .nav_head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+
+            .menu_title {
+                color: $primary;
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+            }
+
+            .close_button {
+                background: transparent;
+                border: none;
+                .close_icon {
+                    display: block;
+                    cursor: pointer;
+                    width: 24px;
+                    height: 24px;
+                    background-color: $primary;
+                    -webkit-mask: url("../../assets/icons/nav-icons/icon-close.svg") no-repeat center;
+                    mask-image: url("../../assets/icons/nav-icons/icon-close.svg") no-repeat center;
+                }
+            }
+        }
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border-bottom: 1px dashed #bacbd5;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+
+            .navigation_items {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                cursor: pointer;
+                text-decoration: none;
+                border-radius: 8px;
+
+                &.active {
+                    border-radius: 8px;
+                    border: 1px solid $secondary;
+                    background: #e5f1fc;
+
+                    .Dashboard,
+                    .Assessment,
+                    .MyLibrary {
+                        background-color: $secondary;
+                    }
+                    .title {
+                        color: $secondary;
+                    }
+                }
+                .Dashboard,
+                .Assessment,
+                .MyLibrary {
+                    display: block;
+                    cursor: pointer;
+                    width: 20px;
+                    height: 20px;
+                    background-color: $primary;
+                    -webkit-mask: url("../../assets/icons/nav-icons/dashboard.svg") no-repeat center;
+                    mask-image: url("../../assets/icons/nav-icons/dashboard.svg") no-repeat center;
+                }
+                .Assessment {
+                    -webkit-mask: url("../../assets/icons/nav-icons/note_alt.svg") no-repeat center;
+                    mask-image: url("../../assets/icons/nav-icons/note_alt.svg") no-repeat center;
+                }
+                .MyLibrary {
+                    -webkit-mask: url("../../assets/icons/nav-icons/quiz.svg") no-repeat center;
+                    mask-image: url("../../assets/icons/nav-icons/quiz.svg") no-repeat center;
+                }
+
+                .title {
+                    color: $primary;
+                    font-family: "Inter", sans-serif;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 30px;
+                }
+            }
+        }
+
+        .admin_wrap {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+
+            .status {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                .round_Status {
+                    display: block;
+                    cursor: pointer;
+                    width: 20px;
+                    height: 20px;
+                    background-color: $primary;
+                    -webkit-mask: url("../../assets/icons/nav-icons/admin_meds.svg") no-repeat center;
+                    mask-image: url("../../assets/icons/nav-icons/admin_meds.svg") no-repeat center;
+                }
+                .title {
+                    color: $primary;
+                    font-family: "Inter", sans-serif;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 30px;
+                }
+            }
+
+            .button_wrap {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .admin_button {
+                    border-radius: 22px;
+                    border: 1px solid $danger;
+                    background: $danger-light;
+                    padding: 2px 8px;
+                    color: $danger;
+                    font-family: "Inter", sans-serif;
+                    font-size: 10px;
+                    font-weight: 500;
+                }
+            }
         }
     }
 }

@@ -1,38 +1,21 @@
-import React from 'react';
-import styles from "./assessments.module.scss"
+import React, { useContext } from 'react';
+import styles from "./overview.module.scss"
 import assesmentData from "../../utils/assessmentsOverview.json"
 import { useState } from 'react';
 import { useEffect } from 'react';
+import useWindowSize from '../../common/windowResize';
+import { CurrentStoreContext } from '../Layout';
 
-const Assessments = () => {
-    const [windowSize, setWindowSize] = useState({
-        width: undefined,
-    });
-
-
-    // for screen size conditional handle state and components
-
-    useEffect(() => {
-        function handleResize() {
-            setWindowSize({
-                width: window.innerWidth,
-            });
-        }
-        window.addEventListener("resize", handleResize);
-        handleResize();
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-
+const Overview = () => {
+    const windowSize = useWindowSize();
+    const { isExpend } = useContext(CurrentStoreContext);
 
     return (
-        <div className={styles.assessments_wrapper}>
+        <div className={`${styles.assessments_wrapper} ${!isExpend ? `${styles.isActive}` : ""}`}>
             {
-                windowSize.width > 992 && <h2 className={styles.title}>Assessments Overview</h2>
+                windowSize.width > 580 && <h2 className={styles.title}>Assessments Overview</h2>
             }
-
-
-            <ul className={styles.total_score_wrap}>
+            <ul className={`${styles.total_score_wrap}`}>
                 {
                     assesmentData && assesmentData.map((item, key) => (
                         <li className={styles.total_score_list} key={key}>
@@ -61,4 +44,4 @@ const Assessments = () => {
 }
 
 
-export default Assessments;
+export default Overview;
