@@ -17,8 +17,6 @@ const UserList = () => {
         displayText = users.join(', ');
     }
 
-
-    console.log(displayText,"displayText")
     return (
         <ul className={styles.userList_wrap}>
             {

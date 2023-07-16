@@ -34,7 +34,7 @@ const Header = () => {
                     )
                 }
                 <div className={styles.brand_logo}>
-                    <a href="#" className={styles.brand}>Assessment</a>
+                    <a href="/" className={styles.brand}>Assessment</a>
                 </div>
                 <ul className={styles.nav_list}>
                     {windowSize.width > 768 && <li className={styles.list}>My Assessments</li>}

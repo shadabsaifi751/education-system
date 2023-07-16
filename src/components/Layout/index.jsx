@@ -14,9 +14,7 @@ const Layout = () => {
     const [isOpen, setIsOpen] = useDetectOutsideClick(sidebarRef, false);
     const [isTabOpen, setIsTabOpen] = useState('MyAssessment');
     const [isExpend, setIsExpend] = useState(true);
-
-    // console.log(isOpen,sidebarRef, "sidebar")
-
+    
     useEffect(() => {
         windowSize.width > 580 ? setIsExpend(false) : setIsExpend(true)
     }, [windowSize])

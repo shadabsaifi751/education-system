@@ -53,6 +53,8 @@ const MyAssessments = () => {
           <UploadAssessment onClick={openPopup} />
           <CardAssesment />
           <CardAssesment />
+          <CardAssesment />
+          <CardAssesment />
         </div>
       </div>
       <button className={styles.add_assessment_button} onClick={openPopup}><i className={styles.icon_plus}></i></button>

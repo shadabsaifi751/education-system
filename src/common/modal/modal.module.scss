@@ -49,6 +49,10 @@
             align-items: center;
             justify-content: space-between;
             border: 1px solid $gray-light;
+            
+            @media (max-width:480px) {
+                padding: 20px;
+            }
 
             .head_title {
                 color: $primary;
@@ -56,6 +60,10 @@
                 font-family: $font;
                 font-size: 20px;
                 font-weight: 600;
+
+                @media (max-width:480px) {
+                    font-size: 18px;
+                }
             }
             .close_button {
                 background: transparent;
@@ -65,6 +73,9 @@
                     padding: 10px;
                     border-radius: 8rem;
                     background-color: $danger-light;
+                }
+                @media (max-width:360px) {
+                    padding: 7px;
                 }
                 .icon_close {
                     width: 30px;

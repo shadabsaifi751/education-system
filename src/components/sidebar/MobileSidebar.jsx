@@ -12,6 +12,7 @@ const MobileSidebar = () => {
 
     const SidebarHandle = (index) => {
         setActive(index);
+        setIsOpen(false);
     }
 
     const closeSidebarHandle = () => {
