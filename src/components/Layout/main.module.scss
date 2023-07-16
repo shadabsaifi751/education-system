@@ -1,0 +1,9 @@
+.header_layout {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    height: 100vh;
+    
+    @media (max-width:992px) {
+        grid-template-columns: 1fr;
+    }
+}

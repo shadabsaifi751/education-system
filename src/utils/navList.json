@@ -1,0 +1,20 @@
+[
+    {
+        "_id": "1",
+        "iconName": "Dashboard",
+        "title": "Dashboard",
+        "route": "/"
+    },
+    {
+        "_id": "2",
+        "iconName": "Assessment",
+        "title": "Assessment",
+        "route": "/assessment"
+    },
+    {
+        "_id": "3",
+        "iconName": "MyLibrary",
+        "title": "My Library",
+        "route": "/my-library"
+    }
+]

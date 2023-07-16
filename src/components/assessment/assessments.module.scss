@@ -1,0 +1,110 @@
+@import "../../globalStyles/theme";
+@import "../../globalStyles/typo";
+
+.assessments_wrapper {
+    .title {
+        color: $primary;
+        font-family: $font;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 16px;
+    }
+
+    .total_score_wrap {
+        border-radius: 12px;
+        border: 1px solid $gray-light;
+        display: flex;
+        flex-wrap: wrap;
+
+        .total_score_list {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            &:not(:last-child) {
+                border-right: 1px solid $gray-light;
+                // padding-right: 20px;
+            }
+
+            @media (max-width:768px) {
+                &:last-child{
+                    order: 2;
+                }
+
+                &:not(:last-child) {
+                    border: none;
+                }
+            }
+            .total_title {
+                color: $primary;
+                font-family: $font;
+                font-size: 14px;
+                font-weight: 600;
+            }
+            .collection_list {
+                display: flex;
+                align-items: center;
+                .counter_wrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+
+                    &:not(:last-child) {
+                        border-right: 1px solid $gray-light;
+                        padding-right: 20px;
+                    }
+                    .icons {
+                        border-radius: 8px;
+
+                        &.source {
+                        }
+
+                        .source,
+                        .candidates,
+                        .assessment,
+                        .purpose {
+                            width: 40px;
+                            height: 40px;
+                            display: block;
+                            cursor: pointer;
+                            background: url("../../assets/icons/dashboard-icons/icon-assessment.svg");
+                        }
+                        .candidates {
+                            background: url("../../assets/icons/dashboard-icons/icon-source.svg");
+                        }
+                        .source {
+                            mask-image: url("../../assets/icons/dashboard-icons/icon-candidates.svg");
+                        }
+                        .purpose {
+                            mask-image: url("../../assets/icons/dashboard-icons/icon-perpose.svg");
+                        }
+                    }
+                    .icon_wrap {
+                        .count_title {
+                            color: $primary;
+                            font-family: $font;
+                            font-size: 20px;
+                            font-weight: 700;
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+                            margin-bottom: 1px;
+                            .badge {
+                                color: $success;
+                                font-family: $font;
+                                font-size: 12px;
+                                font-weight: 500;
+                            }
+                        }
+                        .subtitle {
+                            color: $primary;
+                            font-family: $font;
+                            font-size: 12px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

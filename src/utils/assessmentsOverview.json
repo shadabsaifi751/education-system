@@ -1,0 +1,75 @@
+[
+    {
+        "_id": "1",
+        "title": "Total Assessment",
+        "collection": [
+            {
+                "_id":"1",
+                "icon": "assessment",
+                "count": "34",
+                "badge": "",
+                "name": ""
+            }
+        ]
+    },
+    {
+        "_id": "2",
+        "title": "Candidates",
+        "collection": [
+            {
+                "_id":"1",
+                "icon": "candidates",
+                "count": "11,145",
+                "badge": "+89",
+                "name": "Total Candidate"
+            },
+            {
+                "_id":"2",
+                "icon": "",
+                "count": "1,14",
+                "badge": "+89",
+                "name": "Who Attamped"
+            }
+        ]
+    },
+    {
+        "_id": "3",
+        "title": "Candidates Source",
+        "collection": [
+            {
+                "_id":"1",
+                "icon": "source",
+                "count": "11,000",
+                "badge": "+89",
+                "name": "E-mail"
+            },
+            {
+                "_id":"2",
+                "icon": "",
+                "count": "145",
+                "badge": "+89",
+                "name": "Social Share"
+            },
+            {
+                "_id":"3",
+                "icon": "",
+                "count": "145",
+                "badge": "+89",
+                "name": "Unique Link"
+            }
+        ]
+    },
+    {
+        "_id": "4",
+        "title": "Total Purpose",
+        "collection": [
+            {
+                "_id":"1",
+                "icon": "purpose",
+                "count": "11",
+                "badge": "",
+                "name": ""
+            }
+        ]
+    }
+]

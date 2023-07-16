@@ -1,0 +1,63 @@
+@import "../../../globalStyles/theme";
+
+.nav_list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 16px;
+    padding-bottom: 27px;
+    border-bottom: 1px dashed #bacbd5;
+    .list {
+        padding: 15px 8px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        text-decoration: none;
+
+        &.active {
+            border-radius: 8px;
+            border: 1px solid  $secondary;
+            background: #e5f1fc;
+
+            .Dashboard,
+            .Assessment,
+            .MyLibrary {
+                background-color: $secondary;
+            }
+            .title {
+                color: $secondary;
+            }
+        }
+        .Dashboard,
+        .Assessment,
+        .MyLibrary {
+            display: block;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            background-color: $primary;
+            -webkit-mask: url("../../../assets/icons/nav-icons/dashboard.svg") no-repeat center;
+            mask-image: url("../../../assets/icons/nav-icons/dashboard.svg") no-repeat center;
+        }
+        .Assessment {
+            -webkit-mask: url("../../../assets/icons/nav-icons/note_alt.svg") no-repeat center;
+            mask-image: url("../../../assets/icons/nav-icons/note_alt.svg") no-repeat center;
+        }
+        .MyLibrary {
+            -webkit-mask: url("../../../assets/icons/nav-icons/quiz.svg") no-repeat center;
+            mask-image: url("../../../assets/icons/nav-icons/quiz.svg") no-repeat center;
+        }
+
+        .title {
+            color: $primary;
+            font-family: "Inter", sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+    }
+}

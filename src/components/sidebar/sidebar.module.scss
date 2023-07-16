@@ -1,0 +1,97 @@
+@import "../../globalStyles/theme";
+
+.sidebar {
+    padding: 16px 20px 20px 30px;
+    display: flex;
+    flex-direction: column;
+
+    .status {
+        padding: 15px 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+
+        &.active {
+            border-radius: 8px;
+            border: 1px solid $secondary;
+            background: #e5f1fc;
+
+            .Dashboard,
+            .Assessment,
+            .MyLibrary {
+                background-color: $secondary;
+            }
+            .title {
+                color: $secondary;
+            }
+        }
+        .round_Status {
+            display: block;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            background-color: $primary;
+            -webkit-mask: url("../../assets/icons/nav-icons/admin_meds.svg") no-repeat center;
+            mask-image: url("../../assets/icons/nav-icons/admin_meds.svg") no-repeat center;
+        }
+        .title {
+            color: $primary;
+            font-family: "Inter", sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+    }
+    .button_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 6px;
+        .admin_button {
+            border-radius: 22px;
+            border: 1px solid $danger;
+            background: $danger-light;
+            padding: 6px 8px;
+            color: $danger;
+            font-family: "Inter", sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+        }
+    }
+}
+
+.mobile_sidebar_wrapper {
+    background: rgba($black, 0.1);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    display: none;
+    
+    &.active{
+        display: block;
+        .mobile_sidebar{
+            transform: translate(0);
+        }
+    }
+
+    .mobile_sidebar{
+        padding: 40px 20px;
+        position: fixed;
+        height: 100vh;
+        display: block;
+        z-index: 50;
+        top: 0;
+        left: 0;
+        width: 315px;
+        transform: translate(-100%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &.active{
+            transform: translate(0);
+        }
+    }
+}

@@ -1,0 +1,88 @@
+@import "../../globalStyles/theme";
+@import "../../globalStyles/typo";
+
+.header {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid $gray-light;
+
+    .brand_logo {
+        .brand {
+            border-right: 1px solid $gray-light;
+            color: $primary;
+            font-family: $font;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px 20px 10px 0;
+
+            @media (max-width: 768px) {
+                border-right: none;
+            }
+        }
+    }
+
+    .humbergar {
+        padding: 10px;
+        .humbergar_icon {
+            width: 30px;
+            height: 30px;
+            background-color: $primary;
+            display: block;
+            cursor: pointer;
+            -webkit-mask: url("../../assets/icons/dashboard-icons/humbergar.svg") no-repeat center;
+            mask-image: url("../../assets/icons/dashboard-icons/humbergar.svg") no-repeat center;
+        }
+    }
+    .nav_list {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            justify-content: flex-end;
+        }
+        .list {
+            color: $secondary;
+            font-family: $font;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 26.5px 0;
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                left: 0;
+                border-bottom: 3px solid #0073e6;
+                z-index: 1;
+                width: 100%;
+            }
+        }
+        .Icons {
+            display: flex;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            .mobile_icon,
+            .desktop_icon {
+                width: 24px;
+                height: 24px;
+                background-color: $primary;
+                display: block;
+                cursor: pointer;
+                background: url("../../assets/icons/dashboard-icons/icon-mobile.svg") no-repeat center;
+                // mask-image: url("../../assets/icons/dashboard-icons/icon-mobile.svg") no-repeat center;
+            }
+
+            .desktop_icon {
+                background: url("../../assets/icons/dashboard-icons/icon-desktop.svg") no-repeat center;
+            }
+        }
+    }
+}
