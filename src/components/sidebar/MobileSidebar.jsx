@@ -5,16 +5,17 @@ import navData from "../../utils/navList.json"
 import { CurrentStoreContext } from '../Layout';
 
 const MobileSidebar = () => {
-
     const { isOpen, setIsOpen, sidebarRef } = useContext(CurrentStoreContext);
     const [active, setActive] = useState();
 
-
+    
+    // open handle for sidebar navigation.
     const SidebarHandle = (index) => {
         setActive(index);
         setIsOpen(false);
     }
 
+    // close handle for sidebar navigation
     const closeSidebarHandle = () => {
         setIsOpen(false);
     }

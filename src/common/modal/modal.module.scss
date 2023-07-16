@@ -16,6 +16,7 @@
     align-items: flex-end;
     -webkit-transition: all 0.3s cubic-bezier(0.64, 0.19, 0.4, 0.81);
     transition: all 0.3s cubic-bezier(0.64, 0.19, 0.4, 0.81);
+    opacity: 0;
 
     &.show {
         opacity: 1;

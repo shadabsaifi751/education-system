@@ -5,8 +5,8 @@ import { Link, useLocation } from 'react-router-dom';
 
 const MenuList = () => {
 
-    const location = useLocation();
-    
+    // const location = useLocation();
+
     const [active, setActive] = useState(false)
 
     const NavigateHandle = (index) => {

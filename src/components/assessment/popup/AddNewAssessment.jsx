@@ -6,7 +6,7 @@ import ChipInput from '../../../common/form/ChipInput';
 
 const AddNewAssessment = ({ closePopup, isOpen }) => {
 
-    const selectData = ["one", "two", "three"];
+    const selectData = ["select", "two", "three"];
 
     return (
         <Modals isOpen={isOpen} onClose={closePopup}>

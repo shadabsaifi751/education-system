@@ -1,17 +1,45 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import styles from "./modal.module.scss"
 
 const Modals = ({ isOpen, onClose, children, title }) => {
-  if (!isOpen) return null;
+  const popupRef = useRef(null);
 
-  const Submit=()=>{
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    const handleEscapeKey = (event) => {
+      if (event.keyCode === 27) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleOutsideClick);
+      document.addEventListener('keydown', handleEscapeKey);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener('keydown', handleEscapeKey);
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) {
+    return null;
+  }
+
+  const Submit = () => {
     onClose()
   }
 
   return ReactDOM.createPortal(
-    <div className={`${styles.popup_overlay} ${isOpen ? `${styles.show}` : ''}`}>
-      <div className={`${styles.popup_content} ${isOpen ? `${styles.isOpenPopup}` : ''}`}>
+    <div className={`${styles.popup_overlay} ${isOpen ? `${styles.show}` : ''}`} >
+      <div ref={popupRef} className={`${styles.popup_content} ${isOpen ? `${styles.isOpenPopup}` : ''}`}>
 
         <div className={styles.modal_header}>
           <h4 className={styles.head_title}>{title ? title : "Create new assessment"}</h4>

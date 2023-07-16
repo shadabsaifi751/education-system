@@ -1,11 +1,10 @@
 
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NotFound from './pages/pageNotFound';
 import Layout from './components/Layout';
 import AssessmentPage from './pages/index';
 import LibruaryPage from './pages/LibruaryPage';
-// const Marketingform = lazy(() => import("../App/Marketing/Marketingform"));
 
 
 function App() {
