@@ -144,13 +144,13 @@
                             background: url("../../assets/icons/dashboard-icons/icon-assessment.svg") no-repeat center;
                         }
                         .candidates {
-                            background: url("../../assets/icons/dashboard-icons/icon-source.svg") no-repeat center;
+                            background: url("../../assets/icons/dashboard-icons/icon-source.svg") no-repeat center !important;
                         }
                         .source {
-                            mask-image: url("../../assets/icons/dashboard-icons/icon-candidates.svg") no-repeat center;
+                            background: url("../../assets/icons/dashboard-icons/icon-candidates.svg") no-repeat center !important;
                         }
                         .purpose {
-                            mask-image: url("../../assets/icons/dashboard-icons/icon-perpose.svg") no-repeat center;
+                            background: url("../../assets/icons/dashboard-icons/icon-perpose.svg") no-repeat center !important;
                         }
                     }
                     .icon_wrap {

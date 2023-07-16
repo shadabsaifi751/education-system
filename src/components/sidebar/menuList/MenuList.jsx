@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import navData from "../../../utils/navList.json";
 import styles from "./menuList.module.scss"
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const MenuList = () => {
+
+    const location = useLocation();
+    
     const [active, setActive] = useState(false)
 
     const NavigateHandle = (index) => {

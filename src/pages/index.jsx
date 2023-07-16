@@ -14,7 +14,7 @@ const AssessmentPage = () => {
                         <MyAssessments />
                     </React.Fragment>
                 ) : isTabOpen === "UnstopAssessment" ? (
-                    <></>
+                    <h4 className="text-center mt-40">No recode found</h4>
                 ) : (
                     <React.Fragment>
                         <Overview />

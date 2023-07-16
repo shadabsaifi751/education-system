@@ -7,7 +7,7 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 10px;
-        
+
         .icon_wrap {
             display: flex;
             gap: 4px;
@@ -18,9 +18,9 @@
                 padding: 8px;
                 cursor: pointer;
                 border-radius: 8rem;
-                &.isActive{
+                &.isActive {
                     border: 1px solid $secondary;
-                    background-color: #F2F8FE;
+                    background-color: #f2f8fe;
                 }
                 .icon_serach,
                 .icon_filter,
@@ -48,19 +48,46 @@
         }
     }
 
-    .assessment_list{
+    .assessment_list {
         display: grid;
         gap: 30px;
-        grid-template-columns: repeat(3,1fr);
-        
-        @media (max-width:1024px) {
+        grid-template-columns: repeat(3, 1fr);
+
+        @media (max-width: 1024px) {
             gap: 20px;
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
-        @media (max-width:768px) {
+        @media (max-width: 768px) {
             gap: 15px;
             grid-template-columns: 1fr;
         }
     }
-   
+}
+
+.add_assessment_button {
+    width: 50px;
+    height: 50px;
+    padding: 7.143px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    border-radius: 8rem;
+    background-color: $secondary;
+    border: none;
+
+    @media (max-width:480px) {
+     display: inline-flex;       
+    }
+    .icon_plus {
+        width: 22px;
+        height: 22px;
+        display: block;
+        cursor: pointer;
+        background-color: $white;
+        -webkit-mask: url("../../assets/icons/dashboard-icons/icon-plus.svg") no-repeat center;
+        mask-image: url("../../assets/icons/dashboard-icons/icon-plus.svg") no-repeat center;
+    }
 }

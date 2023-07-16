@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap");
 
 @import "./theme";
 @import "./typo";
@@ -185,27 +184,56 @@ p {
     line-height: 1.25;
 }
 
-// @each $key, $val in $marginBottom {
-//     .mb-#{$key} {
-//         margin-bottom: #{$val};
-//     }
-// }
+.text-center {
+    text-align: center;
+}
 
-// $marginBottom: (
-//     0: "0",
-//     2: "2px",
-//     3: "3px",
-//     5: "8px",
-//     10: "10px",
-//     15: "15px",
-//     20: "20px",
-//     25: "25px",
-//     30: "30px",
-//     40: "40px",
-//     50: "50px",
-//     60: "60px",
-//     80: "80px",
-//     90: "90px",
-//     100: "100px"
-// );
 
+
+$marginBottom: (
+    0: "0",
+    2: "2px",
+    3: "3px",
+    5: "8px",
+    10: "10px",
+    15: "15px",
+    20: "20px",
+    25: "25px",
+    30: "30px",
+    40: "40px",
+    50: "50px",
+    60: "60px",
+    80: "80px",
+    90: "90px",
+    100: "100px"
+);
+
+@each $key, $val in $marginBottom {
+    .mb-#{$key} {
+        margin-bottom: #{$val};
+    }
+}
+
+$marginTop: (
+    0: "0",
+    2: "2px",
+    3: "3px",
+    5: "8px",
+    10: "10px",
+    15: "15px",
+    20: "20px",
+    25: "25px",
+    30: "30px",
+    40: "40px",
+    50: "50px",
+    60: "60px",
+    80: "80px",
+    90: "90px",
+    100: "100px"
+);
+
+@each $key, $val in $marginTop {
+    .mt-#{$key} {
+        margin-top: #{$val};
+    }
+}
