@@ -10,8 +10,8 @@ const Modals = ({ isOpen, onClose, children, title }) => {
   }
 
   return ReactDOM.createPortal(
-    <div className={`${styles.popup_overlay} ${isOpen ? 'show' : ''}`}>
-      <div className={`${styles.popup_content} ${isOpen ? 'isOpenPopup' : ''}`}>
+    <div className={`${styles.popup_overlay} ${isOpen ? `${styles.show}` : ''}`}>
+      <div className={`${styles.popup_content} ${isOpen ? `${styles.isOpenPopup}` : ''}`}>
 
         <div className={styles.modal_header}>
           <h4 className={styles.head_title}>{title ? title : "Create new assessment"}</h4>
