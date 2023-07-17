@@ -4,17 +4,15 @@ import Sidebar from '../sidebar/Sidebar';
 import Desktop from '../dashboard';
 import useWindowSize from '../../common/windowResize';
 import MobileSidebar from '../sidebar/MobileSidebar';
-import { useDetectOutsideClick } from '../../common/detectOutside/useDetectOutsideClick';
 
 export const CurrentStoreContext = createContext(null);
 
 const Layout = () => {
-    const sidebarRef = useRef(null);
     const windowSize = useWindowSize();
-    const [isOpen, setIsOpen] = useDetectOutsideClick(sidebarRef, false);
+    const [isOpen, setIsOpen] = useState(false);
     const [isTabOpen, setIsTabOpen] = useState('MyAssessment');
     const [isExpend, setIsExpend] = useState(true);
-    
+
     useEffect(() => {
         windowSize.width > 580 ? setIsExpend(false) : setIsExpend(true)
     }, [windowSize])
@@ -25,7 +23,6 @@ const Layout = () => {
             value={{
                 isOpen,
                 setIsOpen,
-                sidebarRef,
                 setIsTabOpen,
                 isTabOpen,
                 setIsExpend,

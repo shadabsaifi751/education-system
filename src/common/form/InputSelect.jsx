@@ -3,7 +3,7 @@ import styles from "./form.module.scss"
 
 const InputSelect = ({ label, options, value, onChange }) => {
 
-    console.log(options,"selectData")
+    // console.log(options,"selectData")
     return (
         <div className={styles.select_wrap}>
             <label className={styles.label}>{label}</label>

@@ -1,35 +1,31 @@
 import { useState, useEffect, useRef } from "react";
 
+/**
+ * Hook for handling closing when clicking outside of an element
+ * @param {React.node} el
+ * @param {boolean} initialState
+ */
 export const useDetectOutsideClick = (el, initialState) => {
   const [isActive, setIsActive] = useState(initialState);
   const elRef = useRef(null);
 
   useEffect(() => {
-    const onClickOutside = e => {
+    const onClick = e => {
+      // If the active element exists and is clicked outside of
       if (elRef.current && !elRef.current.contains(e.target)) {
         setIsActive(false);
       }
     };
 
-    const debouncedClickOutside = debounce(onClickOutside, 100);
-
+    // If the item is active (i.e., open) then listen for clicks outside
     if (isActive) {
-      window.addEventListener("mousedown", debouncedClickOutside);
+      window.addEventListener("click", onClick);
     }
 
     return () => {
-      window.removeEventListener("mousedown", debouncedClickOutside);
+      window.removeEventListener("click", onClick);
     };
   }, [isActive]);
 
   return [isActive, setIsActive, elRef];
-};
-
-// Debounce helper function
-const debounce = (fn, delay) => {
-  let timeoutId;
-  return function (...args) {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => fn.apply(this, args), delay);
-  };
 };

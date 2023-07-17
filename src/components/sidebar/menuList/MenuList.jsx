@@ -4,10 +4,11 @@ import styles from "./menuList.module.scss"
 import { Link, useLocation } from 'react-router-dom';
 
 const MenuList = () => {
+    const location = useLocation();
+    const activePage = navData.find(item => item.route === location.pathname);
+    const activePageId = activePage ? activePage._id : "";
 
-    // const location = useLocation();
-
-    const [active, setActive] = useState(false)
+    const [active, setActive] = useState(activePageId)
 
     const NavigateHandle = (index) => {
         setActive(index);

@@ -5,6 +5,7 @@ import UploadAssessment from '../../common/uploadAssessment/UploadAssessment';
 import { CardAssesment } from '../../common/cardAssesment/CardAssesment';
 import { CurrentStoreContext } from '../Layout';
 import AddNewAssessment from './popup/AddNewAssessment';
+import AssessmentList from "../../utils/assessmentList.json"
 
 const MyAssessments = () => {
   const { setIsExpend, isExpend } = useContext(CurrentStoreContext);
@@ -51,10 +52,11 @@ const MyAssessments = () => {
 
         <div className={styles.assessment_list}>
           <UploadAssessment onClick={openPopup} />
-          <CardAssesment />
-          <CardAssesment />
-          <CardAssesment />
-          <CardAssesment />
+          {
+            AssessmentList && AssessmentList.map((item,key) =>(
+              <CardAssesment Item={item} key={key}/>
+            ))
+          }
         </div>
       </div>
       <button className={styles.add_assessment_button} onClick={openPopup}><i className={styles.icon_plus}></i></button>

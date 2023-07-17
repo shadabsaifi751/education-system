@@ -1,30 +1,9 @@
-import React, { useContext } from 'react';
-import Overview from '../components/assessment/Overview';
-import MyAssessments from '../components/assessment/MyAssessments';
-import { CurrentStoreContext } from '../components/Layout';
+import React from 'react'
 
-const AssessmentPage = () => {
-    const { isTabOpen } = useContext(CurrentStoreContext);
-    return (
-        <React.Fragment>
-            {
-                isTabOpen === "MyAssessment" ? (
-                    <React.Fragment>
-                        <Overview />
-                        <MyAssessments />
-                    </React.Fragment>
-                ) : isTabOpen === "UnstopAssessment" ? (
-                    <h4 className="text-center mt-40">No record found</h4>
-                ) : (
-                    <React.Fragment>
-                        <Overview />
-                        <MyAssessments />
-                    </React.Fragment>
-                )
-            }
-
-        </React.Fragment>
-    )
+const Home = () => {
+  return (
+    <h4 className="mt-40 text-center">Home coming soon...</h4>
+  )
 }
 
-export default AssessmentPage
+export default Home

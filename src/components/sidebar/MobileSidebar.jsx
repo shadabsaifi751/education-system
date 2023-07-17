@@ -1,17 +1,25 @@
 import React, { useContext, useState } from 'react';
 import styles from "./sidebar.module.scss"
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import navData from "../../utils/navList.json"
 import { CurrentStoreContext } from '../Layout';
 
 const MobileSidebar = () => {
-    const { isOpen, setIsOpen, sidebarRef } = useContext(CurrentStoreContext);
-    const [active, setActive] = useState();
+    const { isOpen, setIsOpen } = useContext(CurrentStoreContext);
+    const location = useLocation();
+    const activePage = navData.find(item => item.route === location.pathname);
+    const activePageId = activePage ? activePage._id : "";
 
-    
+    const [active, setActive] = useState(activePageId);
+
+
     // open handle for sidebar navigation.
     const SidebarHandle = (index) => {
         setActive(index);
+        setIsOpen(false);
+    }
+
+    const outsideClick = () => {
         setIsOpen(false);
     }
 
@@ -20,9 +28,11 @@ const MobileSidebar = () => {
         setIsOpen(false);
     }
 
+    // console.log(activePageId, "location")
+
     return (
-        <div className={`${styles.mobile_sidebar_wrapper} ${isOpen ? `${styles.show}` : ""}`} >
-            <div ref={sidebarRef} className={styles.mobile_sidebar}>
+        <div className={`${styles.mobile_sidebar_wrapper} ${isOpen ? `${styles.show}` : ""}`} onClick={outsideClick}>
+            <div className={styles.mobile_sidebar} onClick={(event) => event.stopPropagation()}>
                 <div className={styles.nav_head}>
                     <p className={styles.menu_title}>Menu</p>
                     <button type='button' className={styles.close_button} onClick={closeSidebarHandle}>
@@ -48,7 +58,6 @@ const MobileSidebar = () => {
                         <button type="button" className={styles.admin_button}>Admin</button>
                     </div>
                 </div>
-
             </div>
         </div>
     )
