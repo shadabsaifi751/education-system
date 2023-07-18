@@ -58,7 +58,7 @@
             &:not(:last-child) {
                 border-right: 1px solid $gray-light;
             }
-            @media (max-width: 1240px) {
+            @media (max-width: 1273px) {
                 &:not(:last-child) {
                     border-right: 0;
                     border-left: 1px solid $gray-light;
@@ -67,6 +67,7 @@
                 &:nth-child(3) {
                     border-top: 1px solid $gray-light;
                     width: 100%;
+                    border-left: 0;
                 }
             }
             @media (max-width: 1024px) {
@@ -78,10 +79,8 @@
                 &:nth-child(3) {
                     border-top: 1px solid $gray-light;
                     width: 100%;
+                    border-left: 0;
                 }
-                // &:nth-child(1) {
-                //     border-left: 0;
-                // }
             }
             @media (max-width: 768px) {
                 &:nth-child(2) {
